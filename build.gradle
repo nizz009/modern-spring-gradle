@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.nizz.modernspringgradle'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // spring-context takes care of all the classes required in the application
+    implementation 'org.springframework:spring-context:6.0.9'
+    // for using @PostConstruct and @PreDestroy annotations
+    implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
